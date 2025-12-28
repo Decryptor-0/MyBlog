@@ -1,6 +1,8 @@
 /* Enable smooth scrolling for the whole page */
 html {
   scroll-behavior: smooth;
+  /* FIX: Prevents the sticky nav from covering section headers */
+  scroll-padding-top: 100px; 
 }
 
 /* 1. Global Reset & Theme - Deep Purple Grunge */
