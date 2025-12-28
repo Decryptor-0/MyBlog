@@ -4,7 +4,7 @@ html {
   scroll-padding-top: 100px;
 }
 
-/* 1. Global Reset & Theme - Deep Purple */
+/* 1. Global Reset & Theme */
 body {
   background-color: #0a0510;
   background-image: 
@@ -14,7 +14,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /* CRITICAL: prevents side-scrolling */
 }
 
 /* Texture Overlay */
@@ -43,10 +43,10 @@ body::before {
 
 /* 2. Navigation Bar */
 nav {
-  background: rgba(10, 5, 15, 0.9);
+  background: rgba(10, 5, 15, 0.95);
   border-bottom: 2px solid #9d00ff;
   box-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
-  padding: 20px 0;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -57,9 +57,9 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 40px;
+  gap: 25px;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
 }
 
 nav ul li a {
@@ -67,19 +67,9 @@ nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
   transition: 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #9d00ff, 0 0 20px #9d00ff;
-}
-
-/* Bottom spacing */
-main {
-  padding-bottom: 50vh; 
 }
 
 /* 3. Main Title */
@@ -88,9 +78,14 @@ h1 {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 60px;
+  margin: 60px 20px;
   letter-spacing: 12px;
   text-shadow: 0 0 10px #9d00ff, 0 0 20px #9d00ff, 0 0 40px rgba(157, 0, 255, 0.8);
+}
+
+.text-center p {
+  text-align: center;
+  padding: 0 20px;
 }
 
 /* 4. Section Boxes */
@@ -105,26 +100,8 @@ section {
   transition: 0.3s ease;
 }
 
-section:hover {
-  background: rgba(157, 0, 255, 0.07);
-  border-color: #9d00ff;
-  box-shadow: 0 0 30px rgba(157, 0, 255, 0.2);
-  transform: translateY(-5px);
-}
-
-h2 {
-  color: #9d00ff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 25px;
-}
-
-/* List Style */
-ul { 
-  list-style: none; 
-  padding-left: 0; 
-}
-
+/* 5. List Styling */
+ul { list-style: none; padding: 0; }
 li {
   margin-bottom: 12px;
   color: #d1c1e0;
@@ -132,48 +109,40 @@ li {
   padding-bottom: 5px;
 }
 
-/* Links */
-#contact a {
-  color: #bc66ff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-#contact a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #9d00ff;
-}
-
-/* --- MOBILE OPTIMIZATION --- */
+/* --- MOBILE OPTIMIZATION (iPhone 12 Fix) --- */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8rem; /* Smaller title for iPhone */
-    letter-spacing: 4px;
-    margin-top: 40px;
-    padding: 0 10px;
+    font-size: 1.6rem !important; /* Force resize */
+    letter-spacing: 3px !important;
+    margin: 30px 10px !important;
+    line-height: 1.2;
+  }
+
+  nav {
+    padding: 10px 0;
   }
 
   nav ul {
-    gap: 15px; /* Tighten nav spacing */
-    flex-wrap: wrap; 
-    padding: 0 10px;
+    gap: 10px;
+    flex-wrap: wrap; /* Wraps links so they don't go off screen */
+    justify-content: center;
   }
 
   nav ul li a {
-    font-size: 0.65rem; /* Tiny text for small screens */
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
   }
 
   section {
-    width: 90%; /* Use screen percentage instead of pixels */
-    margin: 20px auto;
-    padding: 20px;
-    clip-path: none; /* Removing clip-path on mobile prevents weird text cutoffs */
-    border-radius: 2px;
+    width: 85%; /* Centering the boxes */
+    margin: 20px auto !important;
+    padding: 15px !important;
+    clip-path: none !important; /* Prevents text from being cut off */
+    border-right: 1px solid rgba(157, 0, 255, 0.2); /* Restore full border */
   }
 
-  h2 {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
+  li {
+    font-size: 0.85rem;
+    word-wrap: break-word; /* Prevents long cert names from pushing the box out */
   }
 }
