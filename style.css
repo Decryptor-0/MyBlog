@@ -1,7 +1,11 @@
+/* Enable smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
 /* 1. Global Reset & Theme - Deep Purple Grunge */
 body {
-  background-color: #0a0510; /* Deep violet-black */
-  /* Replaced the grid with a subtle "vertical data stream" look */
+  background-color: #0a0510;
   background-image: 
     linear-gradient(to right, rgba(157, 0, 255, 0.03) 1px, transparent 1px);
   background-size: 30px 100%;
@@ -18,7 +22,6 @@ body::after {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  /* Adds a grainy, static-like texture over the background */
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   opacity: 0.2;
   pointer-events: none;
@@ -37,7 +40,7 @@ body::before {
   pointer-events: none;
 }
 
-/* 4. Navigation Bar - High-Voltage Purple */
+/* 4. Navigation Bar */
 nav {
   background: rgba(10, 5, 15, 0.9);
   border-bottom: 2px solid #9d00ff;
@@ -73,7 +76,12 @@ nav ul li a:hover {
   text-shadow: 0 0 10px #9d00ff, 0 0 20px #9d00ff;
 }
 
-/* 5. Main Title - Nuclear Neon Purple */
+/* Add extra space at the bottom so last sections can scroll to the top */
+main {
+  padding-bottom: 50vh; 
+}
+
+/* 5. Main Title */
 h1 {
   font-size: 3.8rem;
   color: #fff;
@@ -81,21 +89,16 @@ h1 {
   text-transform: uppercase;
   margin-top: 60px;
   letter-spacing: 12px;
-  /* Glowing text effect */
-  text-shadow: 
-    0 0 10px #9d00ff, 
-    0 0 20px #9d00ff, 
-    0 0 40px rgba(157, 0, 255, 0.8);
+  text-shadow: 0 0 10px #9d00ff, 0 0 20px #9d00ff, 0 0 40px rgba(157, 0, 255, 0.8);
 }
 
-/* 6. Section Boxes - Beveled Hacker Style */
+/* 6. Section Boxes */
 section {
   max-width: 850px;
   margin: 40px auto;
   padding: 30px;
   background: rgba(157, 0, 255, 0.03);
   border: 1px solid rgba(157, 0, 255, 0.2);
-  /* Sharp accent on top left and bottom right */
   border-left: 5px solid #9d00ff;
   clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 98% 100%, 0% 100%);
   transition: 0.3s ease;
@@ -105,7 +108,7 @@ section:hover {
   background: rgba(157, 0, 255, 0.07);
   border-color: #9d00ff;
   box-shadow: 0 0 30px rgba(157, 0, 255, 0.2);
-  transform: translateY(-5px); /* Swapped slide for a lift effect */
+  transform: translateY(-5px);
 }
 
 h2 {
@@ -113,7 +116,6 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 25px;
-  display: block; /* Changed to block now that the :after tag is gone */
 }
 
 /* 7. List Styling */
