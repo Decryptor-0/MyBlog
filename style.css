@@ -113,18 +113,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-}
-
-/* Distinctive "Status" tag next to headers */
-h2::after {
-  content: "[ENCRYPTED]";
-  font-size: 0.6rem;
-  margin-left: 15px;
-  color: #fff;
-  opacity: 0.4;
-  letter-spacing: 1px;
+  display: block; /* Changed to block now that the :after tag is gone */
 }
 
 /* 7. List Styling */
