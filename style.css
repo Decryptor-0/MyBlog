@@ -60,6 +60,7 @@ nav ul {
   gap: 25px;
   margin: 0;
   padding: 0 10px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
 }
 
 nav ul li a {
@@ -70,6 +71,11 @@ nav ul li a {
   letter-spacing: 1px;
   font-size: 0.8rem;
   transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #9d00ff;
 }
 
 /* 3. Main Title */
@@ -86,6 +92,7 @@ h1 {
 .text-center p {
   text-align: center;
   padding: 0 20px;
+  font-size: 1.1rem;
 }
 
 /* 4. Section Boxes */
@@ -100,6 +107,12 @@ section {
   transition: 0.3s ease;
 }
 
+/* Section headings */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
 /* 5. List Styling */
 ul { list-style: none; padding: 0; }
 li {
@@ -107,15 +120,21 @@ li {
   color: #d1c1e0;
   border-bottom: 1px solid rgba(157, 0, 255, 0.05);
   padding-bottom: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* --- MOBILE OPTIMIZATION (iPhone 12 Fix) --- */
+/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.6rem !important; /* Force resize */
-    letter-spacing: 3px !important;
-    margin: 30px 10px !important;
+    font-size: 2rem !important;
+    letter-spacing: 6px !important;
+    margin: 40px 10px !important;
     line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 
   nav {
@@ -124,25 +143,40 @@ li {
 
   nav ul {
     gap: 10px;
-    flex-wrap: wrap; /* Wraps links so they don't go off screen */
     justify-content: center;
   }
 
   nav ul li a {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     letter-spacing: 0.5px;
+    padding: 5px;
   }
 
   section {
-    width: 85%; /* Centering the boxes */
-    margin: 20px auto !important;
-    padding: 15px !important;
-    clip-path: none !important; /* Prevents text from being cut off */
-    border-right: 1px solid rgba(157, 0, 255, 0.2); /* Restore full border */
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    clip-path: none; /* prevents text from being cut off */
+    border-right: 1px solid rgba(157, 0, 255, 0.2);
   }
 
   li {
     font-size: 0.85rem;
-    word-wrap: break-word; /* Prevents long cert names from pushing the box out */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem !important;
+    letter-spacing: 2px !important;
+    margin: 20px 10px !important;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  li {
+    font-size: 0.8rem;
   }
 }
