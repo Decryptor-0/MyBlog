@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 2. CRT Scanline Effect (Industrial Orange Tint) */
+/* 2. CRT Scanline Effect (Subtle Orange Tint) */
 body::before {
   content: " ";
   display: block;
@@ -25,7 +25,7 @@ body::before {
   opacity: 0.4;
 }
 
-/* 3. Navigation Bar - Floating Glass Look */
+/* 3. Navigation Bar - Clean Row */
 nav {
   background: rgba(15, 15, 15, 0.95);
   border-bottom: 2px solid #ff8c00;
@@ -70,16 +70,9 @@ h1 {
   margin-top: 60px;
   letter-spacing: 8px;
   text-shadow: 0 0 10px #ff8c00, 0 0 30px rgba(255, 140, 0, 0.5);
-  transition: 0.2s;
 }
 
-h1:hover {
-  color: #fff;
-  text-shadow: 2px 0 #ff4500, -2px 0 #ffd700;
-  cursor: crosshair;
-}
-
-/* 5. Section Boxes - Heavy Industrial Sidebar */
+/* 5. Section Boxes - Clean Industrial Sidebar */
 section {
   max-width: 850px;
   margin: 40px auto;
@@ -104,29 +97,26 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* 6. List Items - System Prompt Style */
-ul { list-style: none; padding-left: 10px; }
+/* 6. List Styling - No Prefixes */
+ul { 
+  list-style: none; 
+  padding-left: 0; 
+}
 
 li {
   margin-bottom: 12px;
   color: #d1d1d1;
 }
 
-li::before {
-  content: "[SYS.REQ] ";
-  color: #ff8c00;
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* 7. Footer / Contact Links */
+/* 7. Contact Links */
 #contact a {
   color: #ff8c00;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
 }
 
 #contact a:hover {
   color: #fff;
-  background: rgba(255, 140, 0, 0.2);
+  border-bottom: 1px solid #ff8c00;
 }
