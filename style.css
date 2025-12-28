@@ -12,7 +12,23 @@ body {
   padding: 0;
 }
 
-/* 2. Horizontal Navigation Bar */
+/* 2. CRT Scanline Effect Overlay */
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999; /* Higher z-index to cover the whole screen */
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none; /* Allows you to still click buttons/links through it */
+}
+
+/* 3. Horizontal Navigation Bar */
 nav {
   background: #111418;
   border-bottom: 2px solid #00ff41; /* Hacker green accent */
@@ -46,14 +62,23 @@ nav ul li a:hover {
   text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
 }
 
-/* 3. Main Content Layout */
+/* 4. Main Content Layout */
 main {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* 4. Hacker Typography */
+/* 5. Hacker Typography & Glitch Animation */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
 h1 {
   font-size: 3.5rem;
   color: #00ff41;
@@ -61,6 +86,14 @@ h1 {
   text-transform: uppercase;
   text-shadow: 3px 3px #003b00;
   margin-bottom: 0;
+  transition: 0.2s;
+}
+
+h1:hover {
+  animation: glitch 0.2s linear infinite;
+  color: #fff;
+  text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+  cursor: crosshair;
 }
 
 h2 {
@@ -77,7 +110,7 @@ h2 {
   margin-bottom: 60px;
 }
 
-/* 5. List Styling */
+/* 6. List Styling (Terminal Style) */
 ul {
   list-style: none;
   padding-left: 20px;
@@ -94,9 +127,9 @@ li::before {
   font-weight: bold;
 }
 
-/* 6. Links in text */
+/* 7. Links in text */
 a {
-  color: #4db8ff; /* Subtle blue for links */
+  color: #4db8ff; 
   text-decoration: none;
 }
 
@@ -104,14 +137,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 7. Adding a Glow to specific sections */
-#certifications, #ctf, #labs, #skills, #notes, #contact {
+/* 8. Section Styling & Glow Effects */
+section {
   padding: 20px;
   border: 1px solid rgba(0, 255, 65, 0.1);
   margin-bottom: 20px;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-#certifications:hover {
+section:hover {
   border-color: #00ff41;
+  background: rgba(0, 255, 65, 0.02);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
 }
