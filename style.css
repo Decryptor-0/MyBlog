@@ -1,10 +1,8 @@
-/* Page behavior */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
-/* 1. Global Reset & Theme */
 body {
   background-color: #0a0510;
   background-image: linear-gradient(to right, rgba(157, 0, 255, 0.03) 1px, transparent 1px);
@@ -16,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Texture & Scanlines */
+
 body::after {
   content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
@@ -29,7 +27,7 @@ body::before {
   z-index: 9999; background-size: 100% 4px; pointer-events: none;
 }
 
-/* 2. Navigation */
+
 nav {
   background: rgba(10, 5, 15, 0.95);
   border-bottom: 2px solid #9d00ff;
@@ -48,12 +46,12 @@ nav ul li a {
   font-weight: 900; font-size: 0.8rem; transition: 0.3s ease;
 }
 
-/* 3. Hero Text, Typing Animation & Status Dot */
+
 .text-center p {
-  display: flex;             /* Forces text and dot on the same line */
-  justify-content: center;    /* Centers the whole group */
-  align-items: center;        /* Vertically aligns dot with text */
-  gap: 12px;                  /* Clean spacing between text and dot */
+  display: flex;             
+  justify-content: center;   
+  align-items: center;        
+  gap: 12px;                  
   text-align: center;
   margin: 0 auto;
 }
@@ -71,7 +69,7 @@ nav ul li a {
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #9d00ff } }
 
 .status-indicator {
-  flex-shrink: 0;             /* Stops the dot from squishing */
+  flex-shrink: 0;             
   width: 8px; height: 8px;
   background-color: #00ff41; 
   border-radius: 50%;
